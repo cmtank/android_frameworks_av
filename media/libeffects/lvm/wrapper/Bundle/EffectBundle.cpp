@@ -2385,6 +2385,7 @@ int Equalizer_getParameter(EffectContext     *pContext,
                 ALOGE("\tERROR Equalizer_getParameter() EQ_PARAM_GET_PRESET_NAME preset %d",
                         param2);
             }
+	}
         name = (char *)pValue;
         strncpy(name, EqualizerGetPresetName(param2), *pValueSize - 1);
         name[*pValueSize - 1] = 0;
