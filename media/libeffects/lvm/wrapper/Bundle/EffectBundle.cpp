@@ -2397,6 +2397,13 @@ int Equalizer_getParameter(EffectContext     *pContext,
                         param2);
             }
 	}
+
+        if (*pValueSize < 1) {
+            status = -EINVAL;
+            android_errorWriteLog(0x534e4554, "37536407");
+            break;
+        }
+
         name = (char *)pValue;
         strncpy(name, EqualizerGetPresetName(param2), *pValueSize - 1);
         name[*pValueSize - 1] = 0;
